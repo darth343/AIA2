@@ -8,6 +8,7 @@
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "GenericEntity.h"
+#include "MessageBoard.h"
 
 
 class ShaderProgram;
@@ -31,6 +32,7 @@ private:
 	ShaderProgram* currProg;
 	GroundEntity* groundEntity;
 	FPSCamera camera;
+	MessageBoard* Messageboard;
 	TextEntity* textObj[5];
 	Light* lights[2];
 	static SceneText* sInstance; // The pointer to the object that gets registered

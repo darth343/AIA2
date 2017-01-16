@@ -48,6 +48,8 @@ void MouseController::EndFrameUpdate()
 	prev_posX = curr_posX;
 	prev_posY = curr_posY;
 	prevBtnStatus = currBtnStatus;
+	xoffset = 0;
+	yoffset = 0;
 }
 
 bool MouseController::IsButtonDown(unsigned char _slot)

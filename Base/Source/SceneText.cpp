@@ -120,6 +120,7 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GenerateAxes("reference");
 	MeshBuilder::GetInstance()->GenerateCrossHair("crosshair");
 	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("BlackQuad", Color(0, 0, 0), 1.f);
 	//MeshBuilder::GetInstance()->GetMesh("quad")->textureID = LoadTGA("Image//calibri.tga");
 	MeshBuilder::GetInstance()->GenerateText("text", 16, 16);
 	MeshBuilder::GetInstance()->GetMesh("text")->textureID = LoadTGA("Image//calibri.tga");
@@ -127,8 +128,6 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GenerateText("text_noalpha", 16, 16);
 	MeshBuilder::GetInstance()->GetMesh("text_noalpha")->textureID = LoadTGA("Image//calibri_noalpha.tga");
 	MeshBuilder::GetInstance()->GetMesh("text_noalpha")->material.kAmbient.Set(1, 0, 0);
-	MeshBuilder::GetInstance()->GenerateOBJ("Chair", "OBJ//chair.obj");
-	MeshBuilder::GetInstance()->GetMesh("Chair")->textureID = LoadTGA("Image//chair.tga");
 	MeshBuilder::GetInstance()->GenerateRing("ring", Color(1, 0, 1), 36, 1, 0.5f);
 	MeshBuilder::GetInstance()->GenerateSphere("lightball", Color(1, 1, 1), 18, 36, 1.f);
 	MeshBuilder::GetInstance()->GenerateSphere("sphere", Color(1, 0, 0), 18, 36, 0.5f);
@@ -149,8 +148,10 @@ void SceneText::Init()
 											 "SKYBOX_TOP", "SKYBOX_BOTTOM");
 
 	// Setup the 2D entities
-	float halfWindowWidth = Application::GetInstance().GetWindowWidth() / 2.0f;
-	float halfWindowHeight = Application::GetInstance().GetWindowHeight() / 2.0f;
+	//float halfWindowWidth = Application::GetInstance().GetWindowWidth() / 2.0f;
+	//float halfWindowHeight = Application::GetInstance().GetWindowHeight() / 2.0f;
+	float halfWindowWidth = 400;
+	float halfWindowHeight = 300;
 	float fontSize = 25.0f;
 	float halfFontSize = fontSize / 2.0f;
 
@@ -163,6 +164,10 @@ void SceneText::Init()
 	CMelee* temp = Create::MeleeCharacter("quad", 1, Vector3(0, 0, 0), Vector3(20, 20, 0));
 
 	textObj[0]->SetText("HELLO WORLD");
+
+	Messageboard = MessageBoard::GetInstance();
+	Messageboard->SetFontSize(25);
+	Messageboard->Add(NULL, "Message Board Started!");
 }
 
 void SceneText::Update(double dt)
@@ -192,28 +197,40 @@ void SceneText::Update(double dt)
 	{
 		cout << "Middle Mouse Button was released!" << endl;
 	}
-	if (MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_XOFFSET) != 0.0)
-	{
-		cout << "Mouse Wheel has offset in X-axis of " << MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_XOFFSET) << endl;
-	}
-	if (MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_YOFFSET) != 0.0)
-	{
-		cout << "Mouse Wheel has offset in Y-axis of " << MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_YOFFSET) << endl;
-	}
+	//if (MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_XOFFSET) != 0.0)
+	//{
+	//	cout << "Mouse Wheel has offset in X-axis of " << MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_XOFFSET) << endl;
+	//}
+	//if (MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_YOFFSET) != 0.0)
+	//{
+	//	cout << "Mouse Wheel has offset in Y-axis of " << MouseController::GetInstance()->GetMouseScrollStatus(MouseController::SCROLL_TYPE_YOFFSET) << endl;
+	//}
 	// <THERE>
 
 	//camera.Update(dt); // Can put the camera into an entity rather than here (Then we don't have to write this)
 
 	GraphicsManager::GetInstance()->UpdateLights(dt);
-
+	Messageboard->Update();
 	// Update the 2 text object values. NOTE: Can do this in their own class but i'm lazy to do it now :P
 	// Eg. FPSRenderEntity or inside RenderUI for LightEntity
+
 
 	std::ostringstream ss;
 	ss.precision(5);
 	float fps = (float)(1.f / dt);
 	ss << "FPS: " << fps;
 	textObj[1]->SetText(ss.str());
+
+	//static int count = 0;
+	//static float timer = 0;
+	//timer += dt;
+	//if (timer > 0.5)
+	//{
+	//	ss.str("");
+	//	ss << count++;
+	//	Messageboard->Add(NULL, ss.str());
+	//	timer -= 0.5;
+	//}
 }
 
 void SceneText::Render()
@@ -228,8 +245,17 @@ void SceneText::Render()
 	int halfWindowHeight = Application::GetInstance().GetWindowHeight() / 2;
 	GraphicsManager::GetInstance()->SetOrthographicProjection(-halfWindowWidth, halfWindowWidth, -halfWindowHeight, halfWindowHeight, -10, 10);
 	GraphicsManager::GetInstance()->DetachCamera();
+
+	MS& modelStack = GraphicsManager::GetInstance()->GetModelStack();
+	modelStack.PushMatrix();
+	modelStack.Translate(-550, 0, 0);
 	EntityManager::GetInstance()->Render();
 	EntityManager::GetInstance()->RenderUI();
+	modelStack.PopMatrix();
+
+	Messageboard->Render();
+	// Message Board Rendering
+
 }
 
 void SceneText::Exit()

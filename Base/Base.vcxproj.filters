@@ -25,6 +25,9 @@
     <Filter Include="AI">
       <UniqueIdentifier>{ae8eef8b-e10e-4446-b5d5-a9f65b820f5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Message Board">
+      <UniqueIdentifier>{cb0e7508-e54f-4a99-8406-a46ca40927e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp">
@@ -71,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="Source\AI\Melee.cpp">
       <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MessageBoard.cpp">
+      <Filter>Message Board</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="Source\AI\Melee.h">
       <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MessageBoard.h">
+      <Filter>Message Board</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

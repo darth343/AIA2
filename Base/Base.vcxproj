@@ -20,6 +20,7 @@
     <ClCompile Include="Source\GroundEntity.cpp" />
     <ClCompile Include="Source\Light.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\MessageBoard.cpp" />
     <ClCompile Include="Source\OBJMesh.cpp" />
     <ClCompile Include="Source\PathFinder\Pathfinder.cpp" />
     <ClCompile Include="Source\SceneText.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="Source\GroundEntity.h" />
     <ClInclude Include="Source\Light.h" />
     <ClInclude Include="Source\Map\Tile.h" />
+    <ClInclude Include="Source\MessageBoard.h" />
     <ClInclude Include="Source\OBJMesh.h" />
     <ClInclude Include="Source\PathFinder\Pathfinder.h" />
     <ClInclude Include="Source\SceneText.h" />
