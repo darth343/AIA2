@@ -84,6 +84,15 @@
     <ClCompile Include="Source\AI\Commander.cpp">
       <Filter>AI</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AI\Healer.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AI\Mage.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AI\Ranged.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -148,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="Source\Message.h">
       <Filter>Message Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Healer.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Mage.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Ranged.h">
+      <Filter>AI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
