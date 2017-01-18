@@ -24,6 +24,8 @@
 #include "AI\Melee.h"
 #include "AI\Scout.h"
 #include "AI\Commander.h"
+#include "RenderHelper.h"
+
 
 using namespace std;
 
@@ -123,6 +125,8 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GenerateAxes("reference");
 	MeshBuilder::GetInstance()->GenerateCrossHair("crosshair");
 	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("Legend", Color(1, 1, 1), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("Legend")->textureID = LoadTGA("Image//Legend.tga");;
 	MeshBuilder::GetInstance()->GenerateQuad("bluequad", Color(0.7, 0.7, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("darkbluequad", Color(0.1, 0.1, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("redquad", Color(1, 0.3, 0.3), 1.f);
@@ -295,6 +299,14 @@ void SceneText::Render()
 	GraphicsManager::GetInstance()->DetachCamera();
 
 	MS& modelStack = GraphicsManager::GetInstance()->GetModelStack();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(400, 150, 0);
+	modelStack.Scale(400, 600, 0);
+	RenderHelper::RenderMesh(MeshBuilder::GetInstance()->GetMesh("Legend"));
+	modelStack.PopMatrix();
+
+
 	modelStack.PushMatrix();
 	modelStack.Translate(-200, 150, 0);
 	EntityManager::GetInstance()->Render();
