@@ -6,7 +6,7 @@ EntityBase::EntityBase()
 	, isDone(false)
 	, m_bCollider(false)
 	, bLaser(false)
-	, m_bChildren(false)
+	, b_character(false)
 	, type("base")
 {
 }
@@ -71,9 +71,9 @@ Vector3 EntityBase::GetMax()
 	return Vector3(position.x + 0.1, position.y + 0.1, position.z + 0.1);
 }
 
-bool EntityBase::HasChildren()
+bool EntityBase::IsCharacter()
 {
-	return m_bChildren;
+	return b_character;
 }
 
 void EntityBase::SetType(std::string v_type)
@@ -86,7 +86,7 @@ std::string EntityBase::GetType()
 	return type;
 }
 
-void EntityBase::SetChildren(bool m_Children)
+void EntityBase::SetCharacter(bool b_character)
 {
-	m_bChildren = m_Children;
+	this->b_character = b_character;
 }

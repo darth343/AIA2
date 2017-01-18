@@ -16,6 +16,9 @@ public:
 	virtual void RunFSM() = 0;
 	virtual void Respond() = 0;
 
+	void Message(const std::string& heroType, const std::string& message, CCharacter* _source);
+	virtual void MessageReceive(const std::string& message, CCharacter* _source);
+
 	void SetHealth(const float& health);
 	void SetTeam(const int& teamID);
 
@@ -24,11 +27,17 @@ public:
 
 	void MinusHealth(float val);
 	void AddHealth(float val);
+	void GoTo(Vector3 pos);
 
-private:
+	CCharacter* GetNearestEnemy();
+
+protected:
+	float farRange;
+	float nearRange;
 	float Health;
 	int teamID;
 	bool Dead;
+	Vector3 Goal;
 };
 
 #endif // GENERIC_ENTITY_H

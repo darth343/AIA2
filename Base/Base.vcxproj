@@ -12,7 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AI\CCharacter.cpp" />
+    <ClCompile Include="Source\AI\Commander.cpp" />
     <ClCompile Include="Source\AI\Melee.cpp" />
+    <ClCompile Include="Source\AI\Scout.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\EntityManager.cpp" />
     <ClCompile Include="Source\FPSCamera.cpp" />
@@ -31,7 +33,10 @@
   <ItemGroup>
     <ClInclude Include="..\Common\Source\timer.h" />
     <ClInclude Include="Source\AI\CCharacter.h" />
+    <ClInclude Include="Source\AI\Commander.h" />
     <ClInclude Include="Source\AI\Melee.h" />
+    <ClInclude Include="Source\AI\Scout.h" />
+    <ClInclude Include="Source\AI\Team.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\EntityManager.h" />
     <ClInclude Include="Source\FPSCamera.h" />
@@ -39,6 +44,7 @@
     <ClInclude Include="Source\GroundEntity.h" />
     <ClInclude Include="Source\Light.h" />
     <ClInclude Include="Source\Map\Tile.h" />
+    <ClInclude Include="Source\Message.h" />
     <ClInclude Include="Source\MessageBoard.h" />
     <ClInclude Include="Source\OBJMesh.h" />
     <ClInclude Include="Source\PathFinder\Pathfinder.h" />

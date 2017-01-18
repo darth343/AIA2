@@ -52,6 +52,7 @@ Application::~Application()
 {
 }
 
+
 void Application::Init()
 {
 	//Set the error callback
@@ -65,6 +66,8 @@ void Application::Init()
 
 	//Set the GLFW window creation hints - these are optional
 	glfwWindowHint(GLFW_SAMPLES, 4); //Request 4x antialiasing
+	//glfwWindowHint(GLFW_MAXIMIZED, GL_TRUE); //Request 4x antialiasing
+	//glfwWindowHint(GLFW_MAXIMIZED, 1); //Request Fullscreen
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); //Request a specific OpenGL version
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); //Request a specific OpenGL version
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
@@ -73,6 +76,9 @@ void Application::Init()
 	//Create a window and create its OpenGL context
 	m_window = glfwCreateWindow(m_window_width, m_window_height, "NYP Framework", NULL, NULL);
 
+	//glfwShowWindow();
+
+	//glfwMaximizeWindow(m_window);
 	//If the window couldn't be created
 	if (!m_window)
 	{

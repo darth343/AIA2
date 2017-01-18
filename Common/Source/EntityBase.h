@@ -23,8 +23,8 @@ public:
 	virtual bool IsDone();
 	virtual void SetIsDone(const bool _value);
 
-	bool HasChildren();
-	void SetChildren(bool m_bChildren);
+	bool IsCharacter();
+	void SetCharacter(bool b_character);
 	// Check if this entity has a collider class parent
 	virtual bool HasCollider(void) const;
 	// Set the flag to indicate if this entity has a collider class parent
@@ -48,7 +48,7 @@ protected:
 	bool isDone;
 	bool m_bCollider;
 	bool bLaser;
-	bool m_bChildren;
+	bool b_character;
 	std::string type;
 };
 

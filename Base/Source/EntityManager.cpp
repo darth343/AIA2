@@ -16,7 +16,7 @@ void EntityManager::Update(double _dt)
 	}
 
 	// Check for Collision amongst entities with collider properties
-	CheckForCollision();
+	//CheckForCollision();
 
 	// Clean up entities that are done
 	it = entityList.begin();

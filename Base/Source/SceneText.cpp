@@ -22,6 +22,8 @@
 #include "SkyBox/SkyBoxEntity.h"
 #include <iostream>
 #include "AI\Melee.h"
+#include "AI\Scout.h"
+#include "AI\Commander.h"
 
 using namespace std;
 
@@ -42,6 +44,7 @@ SceneText::~SceneText()
 
 void SceneText::Init()
 {
+	glClearColor(0.2, 0.2, 0.2, 1);
 	currProg = GraphicsManager::GetInstance()->LoadShader("default", "Shader//Texture.vertexshader", "Shader//Texture.fragmentshader");
 	
 	// Tell the shader program to store these uniform locations
@@ -120,6 +123,10 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GenerateAxes("reference");
 	MeshBuilder::GetInstance()->GenerateCrossHair("crosshair");
 	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("bluequad", Color(0.7, 0.7, 1), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("darkbluequad", Color(0.1, 0.1, 1), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("redquad", Color(1, 0.3, 0.3), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("BlackQuad", Color(0, 0, 0), 1.f);
 	//MeshBuilder::GetInstance()->GetMesh("quad")->textureID = LoadTGA("Image//calibri.tga");
 	MeshBuilder::GetInstance()->GenerateText("text", 16, 16);
@@ -161,18 +168,59 @@ void SceneText::Init()
 	}
 
 	// Spawn Team here
-	CMelee* temp = Create::MeleeCharacter("quad", 1, Vector3(0, 0, 0), Vector3(20, 20, 0));
 
-	textObj[0]->SetText("HELLO WORLD");
+	// Team 1
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 250, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 265, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 280, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Create::CommanderCharacter("redquad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	CScout* Scout1 = Create::ScoutCharacter("darkbluequad", 1, Vector3(350, 220, 0), Vector3(20, 20, 0));
+	Scout1->GoTo(Vector3(-100, 100, 0));
+
+	CMelee* Melee2 = Create::MeleeCharacter("redquad", 2, Vector3(-350, -250, 0), Vector3(20, 20, 0));
+	Melee2->GoTo(Vector3(-100, 100, 0));
+
+	
+
+	//textObj[0]->SetText("HELLO WORLD");
 
 	Messageboard = MessageBoard::GetInstance();
 	Messageboard->SetFontSize(25);
-	Messageboard->Add(NULL, "Message Board Started!");
+	Messageboard->Add(NULL, "", "Message Board Started!");
+
 }
 
 void SceneText::Update(double dt)
 {
-	EntityManager::GetInstance()->Update(dt);
+	//EntityManager::GetInstance()->Update(dt);
 
 	// THIS WHOLE CHUNK TILL <THERE> CAN REMOVE INTO ENTITIES LOGIC! Or maybe into a scene function to keep the update clean
 	if(KeyboardController::GetInstance()->IsKeyDown('1'))
@@ -219,18 +267,18 @@ void SceneText::Update(double dt)
 	ss.precision(5);
 	float fps = (float)(1.f / dt);
 	ss << "FPS: " << fps;
-	textObj[1]->SetText(ss.str());
+	textObj[0]->SetText(ss.str());
 
-	//static int count = 0;
-	//static float timer = 0;
-	//timer += dt;
-	//if (timer > 0.5)
-	//{
-	//	ss.str("");
-	//	ss << count++;
-	//	Messageboard->Add(NULL, ss.str());
-	//	timer -= 0.5;
-	//}
+	static int count = 0;
+	static float timer = 0;
+	timer += dt;
+	if (timer > 1)
+	{
+		ss.str("");
+		ss << count++;
+		Messageboard->Add(NULL, "", ss.str());
+		timer -= 1;
+	}
 }
 
 void SceneText::Render()
@@ -248,7 +296,7 @@ void SceneText::Render()
 
 	MS& modelStack = GraphicsManager::GetInstance()->GetModelStack();
 	modelStack.PushMatrix();
-	modelStack.Translate(-550, 0, 0);
+	modelStack.Translate(-200, 150, 0);
 	EntityManager::GetInstance()->Render();
 	EntityManager::GetInstance()->RenderUI();
 	modelStack.PopMatrix();

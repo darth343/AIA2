@@ -78,6 +78,12 @@
     <ClCompile Include="Source\MessageBoard.cpp">
       <Filter>Message Board</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AI\Scout.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AI\Commander.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -129,6 +135,18 @@
       <Filter>AI</Filter>
     </ClInclude>
     <ClInclude Include="Source\MessageBoard.h">
+      <Filter>Message Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Commander.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Scout.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Team.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Message.h">
       <Filter>Message Board</Filter>
     </ClInclude>
   </ItemGroup>

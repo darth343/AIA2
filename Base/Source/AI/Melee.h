@@ -20,16 +20,17 @@ public:
 	CMelee(const std::string& _modelMesh);
 	~CMelee();
 
-	virtual void Update();
+	virtual void Update(double dt);
 	virtual void Render();
 	virtual void RunFSM();
 	virtual void Respond();
+	virtual void MessageReceive(const std::string& message, CCharacter* _source);
 
 	void SetState(SSTATES _state);
 	SSTATES GetState();
 
 private:
-	SSTATES state;
+	SSTATES state; 
 };
 
 namespace Create

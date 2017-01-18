@@ -36,8 +36,8 @@ private:
 	static bool IsKeyPressed(unsigned short key);
 
 	// Should make these not hard-coded :P
-	const static int m_window_width = 1900;
-	const static int m_window_height = 600;
+	const static int m_window_width = 1200;
+	const static int m_window_height = 900;
 
 	//Declare a window object
 	StopWatch m_timer;
