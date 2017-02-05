@@ -44,6 +44,12 @@ void CMelee::RunFSM()
 		}
 	}
 
+	// low hp
+	if (GetHealth() <= 50)
+	{
+		Message("healer", "I am low on health, heal me!", this);
+	}
+
 }
 
 void CMelee::Respond()

@@ -23,7 +23,9 @@
 #include <iostream>
 #include "AI\Melee.h"
 #include "AI\Scout.h"
+#include "AI\Healer.h"
 #include "AI\Commander.h"
+#include "AI\Ranged.h"
 #include "RenderHelper.h"
 
 
@@ -130,6 +132,8 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GenerateQuad("bluequad", Color(0.7, 0.7, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("darkbluequad", Color(0.1, 0.1, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("redquad", Color(1, 0.3, 0.3), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("greenquad", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("yellowquad", Color(1, 1, 0), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("BlackQuad", Color(0, 0, 0), 1.f);
 	//MeshBuilder::GetInstance()->GetMesh("quad")->textureID = LoadTGA("Image//calibri.tga");
@@ -204,7 +208,10 @@ void SceneText::Init()
 	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
 	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
 	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+
+	CMelee* Melee1 = Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	Melee1->SetHealth(30);
+
 	Create::CommanderCharacter("redquad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
 	CScout* Scout1 = Create::ScoutCharacter("darkbluequad", 1, Vector3(350, 220, 0), Vector3(20, 20, 0));
 	Scout1->GoTo(Vector3(-100, 100, 0));
@@ -212,7 +219,9 @@ void SceneText::Init()
 	CMelee* Melee2 = Create::MeleeCharacter("redquad", 2, Vector3(-350, -250, 0), Vector3(20, 20, 0));
 	Melee2->GoTo(Vector3(-100, 100, 0));
 
-	
+	Create::HealerCharacter("greenquad", 1, Vector3(300, 200, 0), Vector3(20, 20, 0));
+
+	Create::RangedCharacter("yellowquad", 1, Vector3(400, 200, 0), Vector3(20, 20, 0));
 
 	//textObj[0]->SetText("HELLO WORLD");
 
@@ -224,7 +233,7 @@ void SceneText::Init()
 
 void SceneText::Update(double dt)
 {
-	//EntityManager::GetInstance()->Update(dt);
+	EntityManager::GetInstance()->Update(dt);
 
 	// THIS WHOLE CHUNK TILL <THERE> CAN REMOVE INTO ENTITIES LOGIC! Or maybe into a scene function to keep the update clean
 	if(KeyboardController::GetInstance()->IsKeyDown('1'))
@@ -273,16 +282,16 @@ void SceneText::Update(double dt)
 	ss << "FPS: " << fps;
 	textObj[0]->SetText(ss.str());
 
-	static int count = 0;
-	static float timer = 0;
-	timer += dt;
-	if (timer > 1)
-	{
-		ss.str("");
-		ss << count++;
-		Messageboard->Add(NULL, "", ss.str());
-		timer -= 1;
-	}
+	//static int count = 0;
+	//static float timer = 0;
+	//timer += dt;
+	//if (timer > 1)
+	//{
+	//	ss.str("");
+	//	ss << count++;
+	//	Messageboard->Add(NULL, "", ss.str());
+	//	timer -= 1;
+	//}
 }
 
 void SceneText::Render()

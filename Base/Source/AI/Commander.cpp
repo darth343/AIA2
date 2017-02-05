@@ -62,6 +62,7 @@ void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 
 			MemberList[i]->GoTo(pos + enemypos);
 		}
+		Message("ranged", "Shoot Him!", this);
 	}
 }
 

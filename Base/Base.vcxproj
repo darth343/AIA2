@@ -13,7 +13,10 @@
   <ItemGroup>
     <ClCompile Include="Source\AI\CCharacter.cpp" />
     <ClCompile Include="Source\AI\Commander.cpp" />
+    <ClCompile Include="Source\AI\Healer.cpp" />
+    <ClCompile Include="Source\AI\Mage.cpp" />
     <ClCompile Include="Source\AI\Melee.cpp" />
+    <ClCompile Include="Source\AI\Ranged.cpp" />
     <ClCompile Include="Source\AI\Scout.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\EntityManager.cpp" />
@@ -34,7 +37,10 @@
     <ClInclude Include="..\Common\Source\timer.h" />
     <ClInclude Include="Source\AI\CCharacter.h" />
     <ClInclude Include="Source\AI\Commander.h" />
+    <ClInclude Include="Source\AI\Healer.h" />
+    <ClInclude Include="Source\AI\Mage.h" />
     <ClInclude Include="Source\AI\Melee.h" />
+    <ClInclude Include="Source\AI\Ranged.h" />
     <ClInclude Include="Source\AI\Scout.h" />
     <ClInclude Include="Source\AI\Team.h" />
     <ClInclude Include="Source\Application.h" />
