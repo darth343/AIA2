@@ -22,8 +22,8 @@ public:
 
 	virtual void Update(double dt);
 	virtual void Render();
-	virtual void RunFSM();
-	virtual void Respond();
+	virtual void RunFSM(double dt);
+	virtual void Respond(double dt);
 
 
 	void SetBase(Vector3 pos);

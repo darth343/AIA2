@@ -18,10 +18,10 @@ CRanged::~CRanged()
 
 }
 
-void CRanged::Update()
+void CRanged::Update(double dt)
 {
-	RunFSM();
-	Respond();
+	RunFSM(dt);
+	Respond(dt);
 }
 
 void CRanged::Render()
@@ -29,12 +29,12 @@ void CRanged::Render()
 	CCharacter::Render();
 }
 
-void CRanged::RunFSM()
+void CRanged::RunFSM(double dt)
 {
 
 }
 
-void CRanged::Respond()
+void CRanged::Respond(double dt)
 {
 
 }

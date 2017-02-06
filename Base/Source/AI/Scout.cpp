@@ -21,8 +21,8 @@ CScout::~CScout()
 
 void CScout::Update(double dt)
 {
-	RunFSM();
-	Respond();
+	RunFSM(dt);
+	Respond(dt);
 }
 
 void CScout::Render()
@@ -30,7 +30,7 @@ void CScout::Render()
 	CCharacter::Render();
 }
 
-void CScout::RunFSM()
+void CScout::RunFSM(double dt)
 {
 	CCharacter* nearestEnemy = GetNearestEnemy();
 
@@ -55,7 +55,7 @@ void CScout::SetBase(Vector3 pos)
 	base = pos;
 }
 
-void CScout::Respond()
+void CScout::Respond(double dt)
 {
 	switch (state)
 	{
@@ -66,7 +66,6 @@ void CScout::Respond()
 	case SCOUT:
 		if ((position - Goal).Length() < 50)
 		{
-			std::cout << "Reached Dest" << std::endl;
 			Goal.Set(Math::RandFloatMinMax(-400, 400), Math::RandFloatMinMax(-300, 300));
 		}
 		break;
@@ -76,7 +75,7 @@ void CScout::Respond()
 
 	if ((Goal - position).Length() > 2)
 	{
-		position += (Goal - position).Normalize() * 2;
+		position += (Goal - position).Normalize() * speed;
 	}
 }
 
@@ -99,6 +98,7 @@ CScout* Create::ScoutCharacter(const std::string& _meshName,
 	result->SetState(CScout::SSTATES::SCOUT);
 	EntityManager::GetInstance()->AddEntity(result, true);
 	result->SetBase(Team::Teams[_teamID]->defaultbase);
+	result->speed = 2;
 
 	return result;
 }

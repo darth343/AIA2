@@ -21,8 +21,8 @@ CCommander::~CCommander()
 
 void CCommander::Update(double dt)
 {
-	RunFSM();
-	Respond();
+	RunFSM(dt);
+	Respond(dt);
 }
 
 void CCommander::Render()
@@ -52,7 +52,8 @@ void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 			}
 		}
 		Message("melee", "Surround Him!", this);
-		Vector3 enemypos = _source->GetNearestEnemy()->GetPosition();
+		CCharacter* enemy = _source->GetNearestEnemy();
+		Vector3 enemypos = enemy->GetPosition();
 		for (int i = 0; i < MemberList.size(); i++)
 		{
 			Vector3 pos = Vector3(80, 0, 0);
@@ -61,12 +62,14 @@ void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 			pos = Rotate * pos;
 
 			MemberList[i]->GoTo(pos + enemypos);
+			static_cast<CMelee*>(MemberList[i])->targetEnemy = enemy;
+			static_cast<CMelee*>(MemberList[i])->SetState(CMelee::SSTATES::SURROUND);
 		}
 		Message("ranged", "Shoot Him!", this);
 	}
 }
 
-void CCommander::RunFSM()
+void CCommander::RunFSM(double dt)
 {
 	CCharacter* nearestEnemy = GetNearestEnemy();
 
@@ -80,7 +83,7 @@ void CCommander::RunFSM()
 
 }
 
-void CCommander::Respond()
+void CCommander::Respond(double dt)
 {
 	switch (state)
 	{
@@ -115,5 +118,6 @@ CCommander* Create::CommanderCharacter(const std::string& _meshName,
 	result->SetHealth(100.f);
 	result->SetState(CCommander::SSTATES::NIL);
 	EntityManager::GetInstance()->AddEntity(result, true);
+	result->speed = 1;
 	return result;
 }

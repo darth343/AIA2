@@ -13,8 +13,8 @@ public:
 
 	virtual void Update(double _dt);
 	virtual void Render();
-	virtual void RunFSM() = 0;
-	virtual void Respond() = 0;
+	virtual void RunFSM(double dt) = 0;
+	virtual void Respond(double dt) = 0;
 
 	void Message(const std::string& heroType, const std::string& message, CCharacter* _source);
 	virtual void MessageReceive(const std::string& message, CCharacter* _source);
@@ -30,6 +30,7 @@ public:
 	void GoTo(Vector3 pos);
 
 	CCharacter* GetNearestEnemy();
+	float speed;
 
 protected:
 	float farRange;
@@ -38,7 +39,6 @@ protected:
 	int teamID;
 	bool Dead;
 	Vector3 Goal;
-	float speed;
 };
 
 #endif // GENERIC_ENTITY_H

@@ -18,10 +18,10 @@ CHealer::~CHealer()
 
 }
 
-void CHealer::Update()
+void CHealer::Update(double dt)
 {
-	RunFSM();
-	Respond();
+	RunFSM(dt);
+	Respond(dt);
 }
 
 void CHealer::Render()
@@ -29,12 +29,12 @@ void CHealer::Render()
 	CCharacter::Render();
 }
 
-void CHealer::RunFSM()
+void CHealer::RunFSM(double dt)
 {
 
 }
 
-void CHealer::Respond()
+void CHealer::Respond(double dt)
 {
 
 }

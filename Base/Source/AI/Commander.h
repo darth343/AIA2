@@ -22,8 +22,8 @@ public:
 
 	virtual void Update(double dt);
 	virtual void Render();
-	virtual void RunFSM();
-	virtual void Respond();
+	virtual void RunFSM(double dt);
+	virtual void Respond(double dt);
 	virtual void MessageReceive(const std::string& message, CCharacter* _source);
 
 	void SetState(SSTATES _state);

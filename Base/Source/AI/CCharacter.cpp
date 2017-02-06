@@ -125,6 +125,9 @@ void CCharacter::AddHealth(float val)
 
 void CCharacter::Render()
 {
+	if (teamID == -1)
+		return;
+
 	glEnable(GL_SAMPLE_ALPHA_TO_COVERAGE);
 	MS& modelStack = GraphicsManager::GetInstance()->GetModelStack();
 	modelStack.PushMatrix();

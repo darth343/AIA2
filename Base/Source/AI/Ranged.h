@@ -20,10 +20,10 @@ public:
 	CRanged(const std::string& _modelMesh);
 	~CRanged();
 
-	virtual void Update();
+	virtual void Update(double dt);
 	virtual void Render();
-	virtual void RunFSM();
-	virtual void Respond();
+	virtual void RunFSM(double dt);
+	virtual void Respond(double dt);
 	virtual void MessageReceive(const std::string& message, CCharacter* _source);
 
 	void SetState(STATES _state);

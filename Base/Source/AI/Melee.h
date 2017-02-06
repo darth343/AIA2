@@ -8,11 +8,15 @@ class Mesh;
 class CMelee : public CCharacter
 {
 public:
+	CCharacter* targetEnemy;
+
+
 	enum SSTATES
 	{
 		NIL,
 		ATTACK,
 		DEFEND,
+		SURROUND,
 		RETREAT,
 		NUM_OF_STATES
 	};
@@ -22,15 +26,22 @@ public:
 
 	virtual void Update(double dt);
 	virtual void Render();
-	virtual void RunFSM();
-	virtual void Respond();
+	virtual void RunFSM(double dt);
+	virtual void Respond(double dt);
 	virtual void MessageReceive(const std::string& message, CCharacter* _source);
 
 	void SetState(SSTATES _state);
 	SSTATES GetState();
 
+	std::string StateToString();
+
+	float defaultSpeed;
 private:
-	SSTATES state; 
+	SSTATES state;
+	bool ReachedGoal;
+
+	// Attack Variables
+	float attackCooldown;
 };
 
 namespace Create
