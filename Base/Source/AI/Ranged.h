@@ -9,6 +9,8 @@ class Mesh;
 class CRanged : public CCharacter
 {
 public:
+	CCharacter* targetEnemy;
+
 	enum STATES
 	{
 		NONE,

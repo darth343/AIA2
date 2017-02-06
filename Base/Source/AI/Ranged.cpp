@@ -41,10 +41,10 @@ void CRanged::Respond(double dt)
 	case NONE:
 		break;
 	case SHOOT:
-	{
-				Team::Teams[this->teamID]->TeamComp["meelee"];
+	{				
+			
 
-				break;
+			      break;
 	}
 	case RETREAT:
 		break;

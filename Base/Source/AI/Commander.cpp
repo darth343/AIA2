@@ -66,6 +66,8 @@ void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 			static_cast<CMelee*>(MemberList[i])->SetState(CMelee::SSTATES::SURROUND);
 		}
 		Message("ranged", "Shoot Him!", this);
+		
+
 	}
 }
 

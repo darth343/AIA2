@@ -55,6 +55,43 @@ float Team::GetTeamHealth()
 	return health;
 }
 
+Vector3 Team::GetTeamPosition()
+{
+
+	for (int i = 0; i < TeamComp["melee"].size(); ++i)
+	{
+		position += TeamComp["melee"][i]->GetPosition();
+	}
+
+	for (int i = 0; i < TeamComp["ranged"].size(); ++i)
+	{
+		position += TeamComp["ranged"][i]->GetPosition();
+	}
+
+	for (int i = 0; i < TeamComp["mage"].size(); ++i)
+	{
+		position += TeamComp["mage"][i]->GetPosition();
+	}
+
+	for (int i = 0; i < TeamComp["scout"].size(); ++i)
+	{
+		position += TeamComp["scout"][i]->GetPosition();
+	}
+
+	for (int i = 0; i < TeamComp["healer"].size(); ++i)
+	{
+		position += TeamComp["healer"][i]->GetPosition();
+	}
+
+
+	for (int i = 0; i < TeamComp["commander"].size(); ++i)
+	{
+		position += TeamComp["commander"][i]->GetPosition();
+	}
+
+	return position;
+}
+
 void Team::TeamInit(int teamID, int numberofmelee, int numberofrange, int numberofmage, int numberofscout, int numberofhealer)
 {
 	this->teamID = teamID;
