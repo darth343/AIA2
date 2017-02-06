@@ -132,5 +132,12 @@ void CCharacter::Render()
 	modelStack.Scale(scale.x, scale.y, scale.z);
 	RenderHelper::RenderMesh(modelMesh);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(position.x, position.y + scale.y, position.z);
+	modelStack.Scale(GetHealth(), 8, 1);
+	RenderHelper::RenderMesh(MeshBuilder::GetInstance()->GetMesh("HPQuad"));
+	modelStack.PopMatrix();
+
 	glDisable(GL_SAMPLE_ALPHA_TO_COVERAGE);
 }
