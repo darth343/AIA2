@@ -32,6 +32,7 @@ public:
 	void SetState(STATES _state);
 	STATES GetState();
 
+	std::string StateToString();
 private:
 	STATES state;
 };

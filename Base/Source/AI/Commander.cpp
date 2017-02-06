@@ -2,6 +2,7 @@
 #include "../EntityManager.h"
 #include "../MessageBoard.h"
 #include "Melee.h"
+#include "Ranged.h"
 #include "Mtx44.h"
 #include "Team.h"
 #define EntityList EntityManager::GetInstance()->entityList
@@ -50,8 +51,15 @@ void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 			static_cast<CMelee*>(Team::Teams[teamID]->TeamComp["melee"][i])->targetEnemy = enemy;
 			static_cast<CMelee*>(Team::Teams[teamID]->TeamComp["melee"][i])->SetState(CMelee::SSTATES::SURROUND);
 		}
-		Message("ranged", "Shoot Him!", this);
+
 		
+		for (int i = 0; i < Team::Teams[teamID]->TeamComp["ranged"].size(); i++)
+		{
+
+			static_cast<CRanged*>(Team::Teams[teamID]->TeamComp["ranged"][i])->targetEnemy = enemy;
+
+		}
+		Message("ranged", "Shoot Him!", this);
 
 	}
 }

@@ -135,6 +135,8 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GetMesh("MeleeRed")->textureID = LoadTGA("Image//MeleeRed.tga");
 	MeshBuilder::GetInstance()->GenerateQuad("HealerBlue", Color(0, 1, 0), 1.f);
 	MeshBuilder::GetInstance()->GetMesh("HealerBlue")->textureID = LoadTGA("Image//HealerBlue.tga");
+	MeshBuilder::GetInstance()->GenerateQuad("HealerRed", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("HealerRed")->textureID = LoadTGA("Image//HealerRed.tga");
 	MeshBuilder::GetInstance()->GenerateQuad("RangedBlue", Color(0, 1, 0), 1.f);
 	MeshBuilder::GetInstance()->GetMesh("RangedBlue")->textureID = LoadTGA("Image//RangedBlue.tga");
 	MeshBuilder::GetInstance()->GenerateQuad("RangedRed", Color(0, 1, 0), 1.f);
@@ -206,8 +208,8 @@ void SceneText::Init()
 
 	
 
-	team1.TeamInit(1, 10, 1, 3, 2, 2);
-	team2.TeamInit(2, 1, 1, 3, 2, 2);
+	team1.TeamInit(1, 1, 1, 1, 1, 0);
+	team2.TeamInit(2, 1, 1, 1, 1, 0);
 
 	//CMelee* Melee1 = Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
 	//Melee1->SetHealth(30);

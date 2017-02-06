@@ -63,7 +63,7 @@ void CMelee::RunFSM(double dt)
 	// low hp
 	if (GetHealth() <= 50)
 	{
-		Message("healer", "I am low on health, heal me!", this);
+		Message("healer", "Me MELEE is low on health, heal me!", this);
 	}
 
 	if (ReachedGoal && state == SURROUND)
@@ -180,7 +180,7 @@ CMelee* Create::MeleeCharacter(const std::string& _meshName,
 	result->SetPosition(_position);
 	result->SetScale(_scale);
 
-	result->SetHealth(100.f);
+	result->SetHealth(40.f);
 	result->SetState(CMelee::SSTATES::DEFEND);
 	result->speed = 1.5f;
 	result->defaultSpeed = result->speed;

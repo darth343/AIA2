@@ -128,6 +128,18 @@ void Team::TeamInit(int teamID, int numberofmelee, int numberofrange, int number
 		}
 	}
 
+	for (int i = 0; i < numberofhealer; ++i)
+	{
+		if (teamID == 1)
+		{
+			TeamComp["healer"].push_back(Create::HealerCharacter("HealerBlue", teamID, position, Vector3(50, 50, 1)));
+		}
+		else
+		{
+			TeamComp["healer"].push_back(Create::HealerCharacter("HealerRed", teamID, position, Vector3(50, 50, 1)));
+		}
+	}
+
 	for (int i = 0; i < numberofmage; ++i)
 	{
 		if (teamID == 1)
