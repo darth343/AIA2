@@ -1,7 +1,7 @@
-﻿Build started 6/2/2017 10:00:54 PM.
+﻿Build started 6/2/2017 10:03:10 PM.
      1>Project "C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/Common/Source" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glfw/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glew/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/irrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\AI\Melee.cpp Source\AI\Scout.cpp Source\SceneText.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/Common/Source" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glfw/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glew/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/irrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\AI\CCharacter.cpp Source\AI\Melee.cpp Source\AI\Ranged.cpp Source\AI\Scout.cpp Source\SceneText.cpp
          SceneText.cpp
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(50): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(132): warning C4305: 'argument' : truncation from 'double' to 'float'
@@ -9,11 +9,14 @@
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(146): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(147): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(149): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(154): warning C4305: 'argument' : truncation from 'double' to 'float'
          Scout.cpp
+         Ranged.cpp
          Melee.cpp
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\ai\melee.cpp(38): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\ai\melee.cpp(39): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\ai\melee.cpp(128): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+         CCharacter.cpp
          Generating Code...
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\ai\melee.cpp(94): warning C4715: 'CMelee::StateToString' : not all control paths return a value
        Link:
@@ -46,4 +49,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.95
+Time Elapsed 00:00:04.00
