@@ -38,6 +38,7 @@ protected:
 	int teamID;
 	bool Dead;
 	Vector3 Goal;
+	float speed;
 };
 
 #endif // GENERIC_ENTITY_H

@@ -14,6 +14,7 @@ CCharacter::CCharacter(const std::string& _modelMesh)
 , farRange(10)
 , nearRange(5)
 , Goal(Vector3(0, 0, 0))
+, speed(0.4f)
 {
 	SetType("Character");
 }
@@ -33,7 +34,7 @@ void CCharacter::Message(const std::string& herotype, const std::string& message
 		if ((*it)->IsCharacter())
 		{
 			CCharacter* Hero = dynamic_cast<CCharacter*>(*it);
-			if (Hero->GetType() == herotype)
+			if (Hero->GetType() == herotype && Hero->GetTeamID() == teamID)
 			{
 				Hero->MessageReceive(message, this);
 			}

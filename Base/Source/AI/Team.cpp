@@ -77,4 +77,8 @@ void Team::TeamInit(int teamID, int numberofmelee, int numberofrange, int number
 		}
 	}
 
+	if (teamID == 1)
+		TeamComp["commander"].push_back(Create::CommanderCharacter("CommanderBlue", teamID, position, Vector3(50, 50, 1)));
+	else
+		TeamComp["commander"].push_back(Create::CommanderCharacter("CommanderRed", teamID, position, Vector3(50, 50, 1)));
 }

@@ -33,7 +33,7 @@ void CCommander::Render()
 
 void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 {
-	if (strcmp(message.c_str(), "Found enemy here, help me!") == 0)
+	if (message == "Found enemy here, help me!")
 	{
 		std::vector<CMelee*> MemberList;
 		MemberList.clear();
@@ -43,7 +43,7 @@ void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 		{
 			if ((*it)->IsCharacter())
 			{
-				if (strcmp((*it)->GetType().c_str(), "melee") == 0)
+				if ((*it)->GetType() == "melee")
 				{
 					CMelee* temp = dynamic_cast<CMelee*>(*it);
 					if (temp->GetTeamID() == teamID)

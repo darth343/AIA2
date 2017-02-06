@@ -38,6 +38,10 @@ void CScout::RunFSM()
 	{
 		if ((position - nearestEnemy->GetPosition()).Length() - scale.x < nearRange)
 		{
+			if (nearestEnemy->GetType() == "scout")
+			{
+				//Message();
+			}
 			state = RETREAT;
 			GoTo(base);
 			Message("commander", "Found enemy here, help me!", this);
@@ -72,7 +76,7 @@ void CScout::Respond()
 
 	if ((Goal - position).Length() > 2)
 	{
-		position += (Goal - position).Normalize();
+		position += (Goal - position).Normalize() * 2;
 	}
 }
 
