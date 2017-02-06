@@ -151,6 +151,7 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GenerateQuad("yellowquad", Color(1, 1, 0), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("BlackQuad", Color(0, 0, 0), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("HPQuad", Color(0, 0.6, 0.2), 1.f);
 	//MeshBuilder::GetInstance()->GetMesh("quad")->textureID = LoadTGA("Image//calibri.tga");
 	MeshBuilder::GetInstance()->GenerateText("text", 16, 16);
 	MeshBuilder::GetInstance()->GetMesh("text")->textureID = LoadTGA("Image//calibri.tga");

@@ -94,7 +94,7 @@ CScout* Create::ScoutCharacter(const std::string& _meshName,
 	result->SetPosition(_position);
 	result->SetScale(_scale);
 
-	result->SetHealth(100.f);
+	result->SetHealth(80.f);
 	result->SetState(CScout::SSTATES::SCOUT);
 	EntityManager::GetInstance()->AddEntity(result, true);
 	result->SetBase(Team::Teams[_teamID]->defaultbase);

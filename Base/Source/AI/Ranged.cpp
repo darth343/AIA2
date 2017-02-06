@@ -62,7 +62,7 @@ CRanged* Create::RangedCharacter(const std::string& _meshName,
 	result->SetPosition(_position);
 	result->SetScale(_scale);
 
-	result->SetHealth(100.f);
+	result->SetHealth(80.f);
 	result->SetState(CRanged::STATES::SHOOT);
 	EntityManager::GetInstance()->AddEntity(result, true);
 	return result;
