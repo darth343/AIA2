@@ -3,6 +3,7 @@
 #include "../MessageBoard.h"
 #include "Melee.h"
 #include "Mtx44.h"
+#include "Team.h"
 #define EntityList EntityManager::GetInstance()->entityList
 
 CCommander::CCommander(const std::string& _modelMesh)
@@ -35,35 +36,19 @@ void CCommander::MessageReceive(const std::string& message, CCharacter* _source)
 {
 	if (message == "Found enemy here, help me!")
 	{
-		std::vector<CMelee*> MemberList;
-		MemberList.clear();
-		std::list<EntityBase*>::iterator it, end;
-		end = EntityList.end();
-		for (it = EntityList.begin(); it != end; ++it)
-		{
-			if ((*it)->IsCharacter())
-			{
-				if ((*it)->GetType() == "melee")
-				{
-					CMelee* temp = dynamic_cast<CMelee*>(*it);
-					if (temp->GetTeamID() == teamID)
-					MemberList.push_back(dynamic_cast<CMelee*>(*it));
-				}
-			}
-		}
 		Message("melee", "Surround Him!", this);
 		CCharacter* enemy = _source->GetNearestEnemy();
 		Vector3 enemypos = enemy->GetPosition();
-		for (int i = 0; i < MemberList.size(); i++)
+		for (int i = 0; i < Team::Teams[teamID]->TeamComp["melee"].size(); i++)
 		{
 			Vector3 pos = Vector3(80, 0, 0);
 			Mtx44 Rotate;
-			Rotate.SetToRotation(360.f / (float)(MemberList.size()) * ((float)i + 1), 0, 0, 1);
+			Rotate.SetToRotation(360.f / (float)(Team::Teams[teamID]->TeamComp["melee"].size()) * ((float)i + 1), 0, 0, 1);
 			pos = Rotate * pos;
 
-			MemberList[i]->GoTo(pos + enemypos);
-			static_cast<CMelee*>(MemberList[i])->targetEnemy = enemy;
-			static_cast<CMelee*>(MemberList[i])->SetState(CMelee::SSTATES::SURROUND);
+			Team::Teams[teamID]->TeamComp["melee"][i]->GoTo(pos + enemypos);
+			static_cast<CMelee*>(Team::Teams[teamID]->TeamComp["melee"][i])->targetEnemy = enemy;
+			static_cast<CMelee*>(Team::Teams[teamID]->TeamComp["melee"][i])->SetState(CMelee::SSTATES::SURROUND);
 		}
 		Message("ranged", "Shoot Him!", this);
 	}
