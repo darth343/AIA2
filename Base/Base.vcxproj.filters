@@ -93,6 +93,9 @@
     <ClCompile Include="Source\AI\Ranged.cpp">
       <Filter>AI</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AI\Team.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">

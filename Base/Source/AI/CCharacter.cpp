@@ -5,6 +5,7 @@
 #include "GraphicsManager.h"
 #include "RenderHelper.h"
 #include "../MessageBoard.h"
+#include "GL/glew.h"
 #define EntityList EntityManager::GetInstance()->entityList
 
 CCharacter::CCharacter(const std::string& _modelMesh)
@@ -123,10 +124,12 @@ void CCharacter::AddHealth(float val)
 
 void CCharacter::Render()
 {
+	glEnable(GL_SAMPLE_ALPHA_TO_COVERAGE);
 	MS& modelStack = GraphicsManager::GetInstance()->GetModelStack();
 	modelStack.PushMatrix();
 	modelStack.Translate(position.x, position.y, position.z);
 	modelStack.Scale(scale.x, scale.y, scale.z);
 	RenderHelper::RenderMesh(modelMesh);
 	modelStack.PopMatrix();
+	glDisable(GL_SAMPLE_ALPHA_TO_COVERAGE);
 }

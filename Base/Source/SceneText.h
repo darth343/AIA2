@@ -9,7 +9,7 @@
 #include "MatrixStack.h"
 #include "GenericEntity.h"
 #include "MessageBoard.h"
-
+#include "AI\Team.h"
 
 class ShaderProgram;
 class SceneManager;
@@ -25,7 +25,6 @@ public:
 	virtual void Update(double dt);
 	virtual void Render();
 	virtual void Exit();
-	void SpawnMortars(int count = 1);
 private:
 	SceneText(SceneManager* _sceneMgr); // This is used to register to SceneManager
 
@@ -35,6 +34,8 @@ private:
 	MessageBoard* Messageboard;
 	TextEntity* textObj[5];
 	Light* lights[2];
+	Team team1;
+	Team team2;
 	static SceneText* sInstance; // The pointer to the object that gets registered
 };
 

@@ -28,7 +28,6 @@
 #include "AI\Ranged.h"
 #include "RenderHelper.h"
 
-
 using namespace std;
 
 SceneText* SceneText::sInstance = new SceneText(SceneManager::GetInstance());
@@ -49,6 +48,7 @@ SceneText::~SceneText()
 void SceneText::Init()
 {
 	glClearColor(0.2, 0.2, 0.2, 1);
+	Math::InitRNG();
 	currProg = GraphicsManager::GetInstance()->LoadShader("default", "Shader//Texture.vertexshader", "Shader//Texture.fragmentshader");
 	
 	// Tell the shader program to store these uniform locations
@@ -129,10 +129,23 @@ void SceneText::Init()
 	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("Legend", Color(1, 1, 1), 1.f);
 	MeshBuilder::GetInstance()->GetMesh("Legend")->textureID = LoadTGA("Image//Legend.tga");;
-	MeshBuilder::GetInstance()->GenerateQuad("bluequad", Color(0.7, 0.7, 1), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("MeleeBlue", Color(0.7, 0.7, 1), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("MeleeBlue")->textureID = LoadTGA("Image//MeleeBlue.tga");
+	MeshBuilder::GetInstance()->GenerateQuad("MeleeRed", Color(0.7, 0.7, 1), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("MeleeRed")->textureID = LoadTGA("Image//MeleeRed.tga");
+	MeshBuilder::GetInstance()->GenerateQuad("HealerBlue", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("HealerBlue")->textureID = LoadTGA("Image//HealerBlue.tga");
+	MeshBuilder::GetInstance()->GenerateQuad("RangedBlue", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("RangedBlue")->textureID = LoadTGA("Image//RangedBlue.tga");
+	MeshBuilder::GetInstance()->GenerateQuad("RangedRed", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("RangedRed")->textureID = LoadTGA("Image//RangedRed.tga");
+	MeshBuilder::GetInstance()->GenerateQuad("ScoutBlue", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("ScoutBlue")->textureID = LoadTGA("Image//ScoutBlue.tga");
+	MeshBuilder::GetInstance()->GenerateQuad("ScoutRed", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("ScoutRed")->textureID = LoadTGA("Image//ScoutRed.tga");
 	MeshBuilder::GetInstance()->GenerateQuad("darkbluequad", Color(0.1, 0.1, 1), 1.f);
-	MeshBuilder::GetInstance()->GenerateQuad("redquad", Color(1, 0.3, 0.3), 1.f);
-	MeshBuilder::GetInstance()->GenerateQuad("greenquad", Color(0, 1, 0), 1.f);
+	MeshBuilder::GetInstance()->GenerateQuad("CommanderRed", Color(1, 0.3, 0.3), 1.f);
+	MeshBuilder::GetInstance()->GetMesh("CommanderRed")->textureID = LoadTGA("Image//CommanderRed.tga");
 	MeshBuilder::GetInstance()->GenerateQuad("yellowquad", Color(1, 1, 0), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	MeshBuilder::GetInstance()->GenerateQuad("BlackQuad", Color(0, 0, 0), 1.f);
@@ -175,53 +188,38 @@ void SceneText::Init()
 		textObj[i] = Create::Text2DObject("text", Vector3(-halfWindowWidth, -halfWindowHeight + fontSize*i + halfFontSize, 0.0f), "", Vector3(fontSize, fontSize, fontSize), Color(0.0f,1.0f,0.0f));
 	}
 
-	// Spawn Team here
-
 	// Team 1
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 250, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 265, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 280, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
+	/*Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 250, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 265, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 280, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
+	Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
+	*/
+	//Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
 
-	CMelee* Melee1 = Create::MeleeCharacter("bluequad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	Melee1->SetHealth(30);
+	
 
-	Create::CommanderCharacter("redquad", 1, Vector3(350, 295, 0), Vector3(20, 20, 0));
-	CScout* Scout1 = Create::ScoutCharacter("darkbluequad", 1, Vector3(350, 220, 0), Vector3(20, 20, 0));
-	Scout1->GoTo(Vector3(-100, 100, 0));
+	team1.TeamInit(1 , 4, 4, 4, 4, 4);
+	team2.TeamInit(2, 4, 4, 4, 4, 4);
 
-	CMelee* Melee2 = Create::MeleeCharacter("redquad", 2, Vector3(-350, -250, 0), Vector3(20, 20, 0));
-	Melee2->GoTo(Vector3(-100, 100, 0));
+	//CMelee* Melee1 = Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
+	//Melee1->SetHealth(30);
 
-	Create::HealerCharacter("greenquad", 1, Vector3(300, 200, 0), Vector3(20, 20, 0));
+	//Create::CommanderCharacter("CommanderRed", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
 
-	Create::RangedCharacter("yellowquad", 1, Vector3(400, 200, 0), Vector3(20, 20, 0));
+	//CScout* Scout1 = Create::ScoutCharacter("darkbluequad", 1, Vector3(350, 220, 0), Vector3(20, 20, 0));
+	////Scout1->GoTo(Vector3(-100, 100, 0));
+
+	//CMelee* Melee2 = Create::MeleeCharacter("MeleeRed", 2, Vector3(-350, -250, 0), Vector3(20, 20, 0));
+	//Melee2->GoTo(Vector3(-100, 100, 0));
+
+	//Create::HealerCharacter("HealerBlue", 1, Vector3(300, 200, 0), Vector3(20, 20, 0));
+
+	//Create::RangedCharacter("yellowquad", 1, Vector3(400, 200, 0), Vector3(20, 20, 0));
 
 	//textObj[0]->SetText("HELLO WORLD");
 

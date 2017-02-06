@@ -1,56 +1,17 @@
-﻿Build started 18/1/2017 10:10:10 PM.
-     1>Project "C:\Users\Shania\Desktop\AIA2\Base\Base.vcxproj" on node 2 (Build target(s)).
+﻿Build started 6/2/2017 6:10:59 PM.
+     1>Project "C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\Shania\Desktop\AIA2\/Common/Source /IC:\Users\Shania\Desktop\AIA2\/glew/include /IC:\Users\Shania\Desktop\AIA2\/glfw/include /IC:\Users\Shania\Desktop\AIA2\/irrKlang/include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _VARIADIC_MAX=10 /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\AI\CCharacter.cpp Source\AI\Commander.cpp Source\AI\Healer.cpp Source\AI\Mage.cpp Source\AI\Melee.cpp Source\AI\Ranged.cpp Source\AI\Scout.cpp Source\Application.cpp Source\EntityManager.cpp Source\FPSCamera.cpp Source\GenericEntity.cpp Source\GroundEntity.cpp Source\Light.cpp Source\main.cpp Source\MessageBoard.cpp Source\OBJMesh.cpp Source\PathFinder\Pathfinder.cpp Source\SceneText.cpp Source\SkyBox\SkyBoxEntity.cpp Source\SpriteEntity.cpp Source\TextEntity.cpp
-         CCharacter.cpp
-         Commander.cpp
-     1>Source\AI\Commander.cpp(56): warning C4018: '<' : signed/unsigned mismatch
-         Healer.cpp
-         Mage.cpp
-         Melee.cpp
-         Ranged.cpp
-         Scout.cpp
-         Application.cpp
-         EntityManager.cpp
-         FPSCamera.cpp
-         GenericEntity.cpp
-         GroundEntity.cpp
-         Light.cpp
-         main.cpp
-         MessageBoard.cpp
-     1>Source\MessageBoard.cpp(41): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\MessageBoard.cpp(116): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\MessageBoard.cpp(118): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\MessageBoard.cpp(121): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>Source\MessageBoard.cpp(130): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\MessageBoard.cpp(135): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\MessageBoard.cpp(136): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         OBJMesh.cpp
-         Pathfinder.cpp
-     1>c:\users\shania\desktop\aia2\base\source\pathfinder\Node.h(9): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\shania\desktop\aia2\base\source\pathfinder\Node.h(10): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\shania\desktop\aia2\base\source\pathfinder\Node.h(25): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\shania\desktop\aia2\base\source\pathfinder\Node.h(26): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>Source\PathFinder\Pathfinder.cpp(74): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\PathFinder\Pathfinder.cpp(116): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\PathFinder\Pathfinder.cpp(135): warning C4018: '<' : signed/unsigned mismatch
-         SceneText.cpp
-     1>Source\SceneText.cpp(49): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
-     1>Source\SceneText.cpp(128): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>Source\SceneText.cpp(129): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>Source\SceneText.cpp(130): warning C4305: 'argument' : truncation from 'double' to 'float'
-         SkyBoxEntity.cpp
-         SpriteEntity.cpp
-         Compiling...
-         TextEntity.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/Common/Source" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glew/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glfw/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/irrKlang/include" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _VARIADIC_MAX=10 /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\AI\Team.cpp
+         Team.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Shania\Desktop\AIA2\Release\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\Shania\Desktop\AIA2\Release /LIBPATH:"C:\Users\Shania\Desktop\AIA2\/glfw/lib-msvc100" /LIBPATH:C:\Users\Shania\Desktop\AIA2\/glew/lib /LIBPATH:C:\Users\Shania\Desktop\AIA2\/irrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Shania\Desktop\AIA2\Release\Base.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Shania\Desktop\AIA2\Release\Base.lib" /MACHINE:X86 /SAFESEH Release\CCharacter.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release" /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glfw/lib-msvc100" /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glew/lib" /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/irrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\Base.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\Base.lib" /MACHINE:X86 /SAFESEH Release\CCharacter.obj
          Release\Commander.obj
          Release\Healer.obj
          Release\Mage.obj
          Release\Melee.obj
          Release\Ranged.obj
          Release\Scout.obj
+         Release\Team.obj
          Release\Application.obj
          Release\EntityManager.obj
          Release\FPSCamera.obj
@@ -67,9 +28,27 @@
          Release\TextEntity.obj
          Generating code
          Finished generating code
-         Base.vcxproj -> C:\Users\Shania\Desktop\AIA2\Release\Base.exe
-     1>Done Building Project "C:\Users\Shania\Desktop\AIA2\Base\Base.vcxproj" (Build target(s)).
+     1>Common.lib(RenderHelper.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(RenderHelper.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(EntityBase.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(EntityBase.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(Collider.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(Collider.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(MeshBuilder.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(MeshBuilder.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(GraphicsManager.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(GraphicsManager.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(MatrixStack.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(MatrixStack.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(Vector3.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(Vector3.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(Mtx44.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(Mtx44.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(KeyboardController.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(KeyboardController.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(SceneManager.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(SceneManager.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(MouseController.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(MouseController.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(timer.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(timer.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(CameraBase.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(CameraBase.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(ShaderProgram.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(ShaderProgram.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(LightBase.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(LightBase.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(Mesh.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(Mesh.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(LoadTGA.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(LoadTGA.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(LoadOBJ.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(LoadOBJ.obj)' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\vc120.pdb'; linking object as if no debug info
+         Base.vcxproj -> C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Release\Base.exe
+     1>Done Building Project "C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Base\Base.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:52.12
+Time Elapsed 00:00:03.91

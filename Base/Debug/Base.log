@@ -1,18 +1,14 @@
-﻿Build started 18/1/2017 10:24:50 PM.
+﻿Build started 6/2/2017 2:45:37 PM.
      1>Project "C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/Common/Source" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glfw/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glew/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/irrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\AI\Commander.cpp Source\AI\Healer.cpp Source\AI\Mage.cpp Source\AI\Melee.cpp Source\AI\Ranged.cpp Source\SceneText.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/Common/Source" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glfw/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glew/include" /I"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/irrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\AI\Team.cpp Source\SceneText.cpp
          SceneText.cpp
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(51): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(132): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(133): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(134): warning C4305: 'argument' : truncation from 'double' to 'float'
-         Ranged.cpp
-         Melee.cpp
-         Mage.cpp
-         Healer.cpp
-         Commander.cpp
-     1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\ai\commander.cpp(56): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(136): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\source\scenetext.cpp(137): warning C4305: 'argument' : truncation from 'double' to 'float'
+         Team.cpp
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Debug" /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glfw/lib-msvc100" /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/glew/lib" /LIBPATH:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\/irrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Debug\Base.lib" /MACHINE:X86 Debug\CCharacter.obj
@@ -22,6 +18,7 @@
          Debug\Melee.obj
          Debug\Ranged.obj
          Debug\Scout.obj
+         Debug\Team.obj
          Debug\Application.obj
          Debug\EntityManager.obj
          Debug\FPSCamera.obj
@@ -50,11 +47,9 @@
      1>FPSCamera.obj : warning LNK4020: a type record in 'c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
      1>EntityManager.obj : warning LNK4020: a type record in 'c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
      1>Application.obj : warning LNK4020: a type record in 'c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-     1>Scout.obj : warning LNK4020: a type record in 'c:\users\arun\documents\2016 s2\ai\assignment2\gh\base\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-     1>CCharacter.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'CCharacter.obj' or at 'C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Debug\vc120.pdb'; linking object as if no debug info
          Base.vcxproj -> C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Debug\Base.exe
      1>Done Building Project "C:\Users\Arun\Documents\2016 S2\AI\ASSIGNMENT2\GH\Base\Base.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.68
+Time Elapsed 00:00:02.17

@@ -9,6 +9,7 @@ CScout::CScout(const std::string& _modelMesh)
 	nearRange = 45;
 	SetType("scout");
 	SetCharacter(true);
+	Goal.Set(Math::RandFloatMinMax(-400, 400), Math::RandFloatMinMax(-300, 300));
 }
 
 CScout::~CScout()
@@ -57,6 +58,11 @@ void CScout::Respond()
 	case ATTACK:
 		break;
 	case SCOUT:
+		if ((position - Goal).Length() < 50)
+		{
+			std::cout << "Reached Dest" << std::endl;
+			Goal.Set(Math::RandFloatMinMax(-400, 400), Math::RandFloatMinMax(-300, 300));
+		}
 		break;
 	case RETREAT:
 		break;
