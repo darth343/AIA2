@@ -14,6 +14,7 @@ public:
 	int teamID;
 	Vector3 position;
 	Vector3 defaultbase;
+	float GetTeamHealth();
 	std::map<std::string, std::vector<CCharacter*>> TeamComp;
 	void TeamInit(int teamID, int numberofmelee, int numberofrange, int numberofmage, int numberofscout, int numberofhealer);
 };
