@@ -36,7 +36,21 @@ void CRanged::RunFSM(double dt)
 
 void CRanged::Respond(double dt)
 {
+	switch (state)
+	{
+	case NONE:
+		break;
+	case SHOOT:
+	{
+				Team::Teams[this->teamID]->TeamComp["meelee"];
 
+				break;
+	}
+	case RETREAT:
+		break;
+	case MOVE:
+		break;
+	}
 }
 
 void CRanged::SetState(STATES _state)

@@ -2,6 +2,7 @@
 #define RANGED_H
 
 #include "CCharacter.h"
+#include "Team.h"
 
 class Mesh;
 
