@@ -13,6 +13,7 @@ public:
 	static std::map<int, Team*> Teams;
 	int teamID;
 	Vector3 position;
+	Vector3 defaultbase;
 	std::map<std::string, std::vector<CCharacter*>> TeamComp;
 	void TeamInit(int teamID, int numberofmelee, int numberofrange, int numberofmage, int numberofscout, int numberofhealer);
 };

@@ -7,6 +7,8 @@
 #include "Commander.h"
 #include <string>
 
+std::map<int, Team*> Team::Teams = {};
+
 Team::Team()
 {
 }
@@ -24,6 +26,9 @@ void Team::TeamInit(int teamID, int numberofmelee, int numberofrange, int number
 		position.Set(300, 200);
 	else
 		position.Set(-300, -200);
+
+	defaultbase = position;
+
 	for (int i = 0; i < numberofmelee; ++i)
 	{
 		if (teamID == 1)

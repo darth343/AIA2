@@ -203,8 +203,8 @@ void SceneText::Init()
 
 	
 
-	team1.TeamInit(1 , 4, 4, 4, 4, 4);
-	team2.TeamInit(2, 4, 4, 4, 4, 4);
+	team1.TeamInit(1 , 4, 4, 4, 20, 4);
+	team2.TeamInit(2, 4, 4, 4, 20, 4);
 
 	//CMelee* Melee1 = Create::MeleeCharacter("MeleeBlue", 1, Vector3(350, 295, 0), Vector3(50, 50, 0));
 	//Melee1->SetHealth(30);

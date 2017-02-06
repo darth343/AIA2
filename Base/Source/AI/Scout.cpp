@@ -1,6 +1,8 @@
 #include "Scout.h"
 #include "../EntityManager.h"
 #include "../MessageBoard.h"
+#include "Team.h"
+
 
 CScout::CScout(const std::string& _modelMesh)
 : CCharacter(_modelMesh)
@@ -68,7 +70,10 @@ void CScout::Respond()
 		break;
 	}
 
-	position += (Goal - position).Normalize();
+	if ((Goal - position).Length() > 2)
+	{
+		position += (Goal - position).Normalize();
+	}
 }
 
 void CScout::SetState(SSTATES _state)
@@ -89,5 +94,7 @@ CScout* Create::ScoutCharacter(const std::string& _meshName,
 	result->SetHealth(100.f);
 	result->SetState(CScout::SSTATES::SCOUT);
 	EntityManager::GetInstance()->AddEntity(result, true);
+	result->SetBase(Team::Teams[_teamID]->defaultbase);
+
 	return result;
 }
