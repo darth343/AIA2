@@ -67,7 +67,10 @@ void CMelee::RunFSM(double dt)
 	}
 
 	if (ReachedGoal && state == SURROUND)
+	{
 		state = ATTACK;
+		attackCooldown = 10;
+	}
 
 }
 

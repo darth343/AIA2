@@ -17,6 +17,44 @@ Team::~Team()
 {
 }
 
+float Team::GetTeamHealth()
+{
+	float health = 0;
+
+	for (int i = 0; i < TeamComp["melee"].size(); ++i)
+	{
+		health += TeamComp["melee"][i]->GetHealth();
+	}
+
+	for (int i = 0; i < TeamComp["ranged"].size(); ++i)
+	{
+		health += TeamComp["ranged"][i]->GetHealth();
+	}
+
+	for (int i = 0; i < TeamComp["mage"].size(); ++i)
+	{
+		health += TeamComp["mage"][i]->GetHealth();
+	}
+
+	for (int i = 0; i < TeamComp["scout"].size(); ++i)
+	{
+		health += TeamComp["scout"][i]->GetHealth();
+	}
+
+	for (int i = 0; i < TeamComp["healer"].size(); ++i)
+	{
+		health += TeamComp["healer"][i]->GetHealth();
+	}
+
+
+	for (int i = 0; i < TeamComp["commander"].size(); ++i)
+	{
+		health += TeamComp["commander"][i]->GetHealth();
+	}
+
+	return health;
+}
+
 void Team::TeamInit(int teamID, int numberofmelee, int numberofrange, int numberofmage, int numberofscout, int numberofhealer)
 {
 	this->teamID = teamID;
